@@ -7,6 +7,5 @@ export const USER_ROUTES = {
   HISTORY_HERITAGE: '/history-heritage',
   ABOUT_BANDUNG: '/about-bandung',
   HISTORY_BANDUNG: '/history-to-bandung',
-  GETTING_TO_BANDUNG: '/getting-to-bandung'
-}
-
+  GETTING_TO_BANDUNG: '/getting-to-bandung',
+};
