@@ -37,10 +37,7 @@ export const Navbar = () => (
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuOffset">
               <span className="navbar__dropdown-text">Tourist Attractions</span>
               <li>
-                <Link
-                  to={USER_ROUTES.CULTURE_ART}
-                  className="dropdown-item"
-                >
+                <Link to={USER_ROUTES.CULTURE_ART} className="dropdown-item">
                   Culture &amp; Art
                 </Link>
               </li>
@@ -83,10 +80,7 @@ export const Navbar = () => (
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuOffset">
               <span className="navbar__dropdown-text">Travel Information</span>
               <li>
-                <Link
-                  to={USER_ROUTES.ABOUT_BANDUNG}
-                  className="dropdown-item"
-                >
+                <Link to={USER_ROUTES.ABOUT_BANDUNG} className="dropdown-item">
                   About Bandung
                 </Link>
               </li>
