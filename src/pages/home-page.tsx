@@ -7,9 +7,9 @@ export const HomePage = () => (
     <Navbar />
     <Hero img={hero} alt="Monumen Perjuangan Bandung" />
     <section className="home-page__must-visit container py-5">
-      <div className="row">
+      <div className="row vh-100">
         {mustVisit.map((data) => (
-          <div className="col-md-4 col-lg-4" key={data.id}>
+          <div className="col-md-4 col-lg-3" key={data.id}>
             <Card type="secondary" data={data} />
           </div>
         ))}
