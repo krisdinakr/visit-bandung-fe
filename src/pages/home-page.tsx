@@ -1,6 +1,6 @@
 import { Navbar, Hero, Card } from 'components';
 import hero from 'assets/images/hero.jpg';
-import {mustVisit} from 'data';
+import { mustVisit } from 'data';
 
 export const HomePage = () => (
   <div className="home-page">
@@ -8,12 +8,11 @@ export const HomePage = () => (
     <Hero img={hero} alt="Monumen Perjuangan Bandung" />
     <section className="home-page__must-visit container py-5">
       <div className="row">
-
-      {mustVisit.map((data) => (
-        <div className="col-lg-4">
-          <Card data={data}/>
-        </div>
-      ))}
+        {mustVisit.map((data) => (
+          <div className="col-md-4 col-lg-4" key={data.id}>
+            <Card type="secondary" data={data} />
+          </div>
+        ))}
       </div>
     </section>
   </div>
