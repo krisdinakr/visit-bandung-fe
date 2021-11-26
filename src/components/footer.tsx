@@ -2,46 +2,46 @@ import { Link } from 'react-router-dom';
 import { USER_ROUTES } from 'routes';
 
 export const Footer = () => (
-  <footer className="bg-dark">
+  <footer className="footer">
     <div className="container">
       <div className="row pt-5">
-        <div className="col-lg-4 d-flex justify-content-center justify-content-md-start">
-          <Link to="/" className="text-decoration-none fw-bold fs-3 text-white">
+        <div className="col-lg-4 pb-3 pt-1">
+          <Link to="/" className="footer__brand">
             Visit Bandung
           </Link>
         </div>
 
-        <div className="col-lg-4">
-          <h5 className="text-white ps-3 py-2">Tourist Attractions</h5>
-          <div className="nav flex-column align-items-center align-items-md-start">
-            <Link to="/" className="nav-link text-white text-decoration-none">
+        <div className="col-6 col-lg-4">
+          <h5 className="footer__section">Tourist Attractions</h5>
+          <div className="nav flex-column">
+            <Link to="/" className="footer__link">
               Culture &amp; Art
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               Shopping
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               Nature
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               Culinary
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               History &amp; Heritage
             </Link>
           </div>
         </div>
 
-        <div className="col-lg-4">
-          <h5 className="text-white ps-3 py-2">Travel Information</h5>
+        <div className="col-6 col-lg-4">
+          <h5 className="footer__section">Travel Information</h5>
           <div className="nav flex-column">
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               About Bandung
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               History of Bandung
             </Link>
-            <Link to="/" className="nav-link text-white text-decoration-none">
+            <Link to="/" className="footer__link">
               Getting to Bandung
             </Link>
           </div>
