@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface CardProps {
   data: any;
-  type: 'primary' | 'secondary';
+  type: 'primary' | 'secondary' | 'overlay';
 }
 
 export const Card: FC<CardProps> = ({ data, type }) => {
@@ -31,20 +31,35 @@ export const Card: FC<CardProps> = ({ data, type }) => {
     );
   }
 
+  if (type === 'primary') {
+    return (
+      <div className="card mb-3 border-0 rounded-0">
+        <Link to="/" className="card__link card__link--primary">
+          <figure className="mb-0 overflow-hidden">
+            <img
+              src={data.images[0]}
+              className="card__img"
+              alt={data.name}
+              loading="lazy"
+            />
+          </figure>
+          <div className="card-body px-0 pb-0">
+            <h5 className="card__title">{data.name}</h5>
+            <p className="card__text">{data.snippet}</p>
+          </div>
+        </Link>
+      </div>
+    );
+  }
+
   return (
     <div className="card mb-3 border-0 rounded-0">
-      <Link to="/" className="card__link card__link--primary">
+      <Link to="/" className="card__link card__link--overlay">
         <figure className="mb-0 overflow-hidden">
-          <img
-            src={data.images[0]}
-            className="card__img"
-            alt={data.name}
-            loading="lazy"
-          />
+          <img src={data.images[0]} className="card__img" alt="..." />
         </figure>
-        <div className="card-body px-0 pb-0">
-          <h5 className="card__title">{data.name}</h5>
-          <p className="card__text">{data.snippet}</p>
+        <div className="card-img-overlay">
+          <h5 className="card__title card__title--overlay">Card title</h5>
         </div>
       </Link>
     </div>

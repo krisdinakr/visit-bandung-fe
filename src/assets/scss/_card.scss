@@ -19,6 +19,9 @@
         transition: all 3ms ease-in;
         color: $secondary;
       }
+      .card__title--overlay {
+        color: $white;
+      }
     }
 
     &--secondary {
@@ -30,12 +33,13 @@
       }
     }
 
-    &--primary {
+    &--primary,
+    &--overlay {
       text-decoration: none;
       &:hover {
         .card__img {
           transition: transform 0.3s ease;
-          transform: translateZ(0) scale(1.1);
+          transform: translateZ(0) scale(1.07);
         }
       }
     }
@@ -83,6 +87,15 @@
       height: auto;
       font-size: 1.25rem;
     }
+
+    &--overlay {
+      color: $white;
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
 
   &__text {
@@ -119,5 +132,10 @@
     position: absolute;
     left: 5%;
     top: -2rem;
+  }
+
+  &-img-overlay {
+    background: linear-gradient(0deg, rgba(37, 37, 37, 0.945) 0%, rgba(0, 0, 0, 0) 50%);
+    border-radius: 0;
   }
 }
