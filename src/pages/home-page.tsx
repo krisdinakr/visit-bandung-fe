@@ -18,13 +18,13 @@ export const HomePage = () => (
         ))}
       </div>
     </section>
-    <section className="home-page__interest container py-3 bg-success">
+    <section className="home-page__interest container py-3">
       <div className="row py-4">
         <h2 className="text-center py-3">Explore by Interest</h2>
       </div>
       <div className="row mb-5">
         {mustVisit.map((data) => (
-          <div className="col-md-4 col-lg-4" key={data.id}>
+          <div className="col-md-3 col-lg-3" key={data.id}>
             <Card type="overlay" data={data} />
           </div>
         ))}

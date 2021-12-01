@@ -53,10 +53,10 @@ export const Card: FC<CardProps> = ({ data, type }) => {
   }
 
   return (
-    <div className="card mb-3 border-0 rounded-0">
+    <div className="card mb-3 border-0 rounded-0 card--overlay">
       <Link to="/" className="card__link card__link--overlay">
         <figure className="mb-0 overflow-hidden">
-          <img src={data.images[0]} className="card__img" alt="..." />
+          <img src={data.images[0]} className="card__img card__img--overlay" alt="..." />
         </figure>
         <div className="card-img-overlay">
           <h5 className="card__title card__title--overlay">Card title</h5>
