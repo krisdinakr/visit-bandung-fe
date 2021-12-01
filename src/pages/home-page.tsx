@@ -6,9 +6,9 @@ export const HomePage = () => (
   <div className="home-page">
     <Navbar />
     <Hero img={hero} alt="Monumen Perjuangan Bandung" />
-    <section className="home-page__must-visit container pb-1 py-3">
-      <div className="row py-4">
-        <h2 className="text-center mb-4">Must Visit</h2>
+    <section className="home-page__must-visit">
+      <div className="home-page__title-box">
+        <h2 className="home-page__title">Must Visit</h2>
       </div>
       <div className="row">
         {mustVisit.map((data) => (
@@ -18,9 +18,9 @@ export const HomePage = () => (
         ))}
       </div>
     </section>
-    <section className="home-page__interest container py-1">
-      <div className="row py-4">
-        <h2 className="text-center mb-4">Explore by Interest</h2>
+    <section className="home-page__interest">
+      <div className="home-page__title-box">
+        <h2 className="home-page__title">Explore by Interest</h2>
       </div>
       <div className="row">
         {interestSection.map((data) => (
