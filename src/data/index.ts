@@ -1,3 +1,5 @@
+import { shopping, culinary, nature, culture } from 'assets/images';
+
 export const mustVisit = [
   {
     id: 1,
@@ -25,3 +27,26 @@ export const mustVisit = [
     snippet: `Museum KAA, a place where the history of the Asian-African was raised, and the Asian-African Partnership `,
   },
 ];
+
+export const interestSection = [
+  {
+    name: 'Culture & Art',
+    images: culture
+  },
+  {
+    name: 'Shopping',
+    images: shopping
+  },
+  {
+    name: 'Nature',
+    images: nature
+  },
+  {
+    name: 'Culinary',
+    images: culinary
+  },
+  {
+    name: 'History & Heritage',
+    images: 'https://cdn1.katadata.co.id/media/images/thumb/2020/04/03/2020_04_03-14_03_08_912bf38709d1751bfe7c23ba5c14cc40_620x413_thumb.jpg'
+  },
+]
