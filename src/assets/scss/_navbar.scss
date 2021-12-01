@@ -1,8 +1,5 @@
 .navbar {
-  position: relative;
-  @include media-breakpoint-down(xl) {
-    background-color: $info;
-  }
+  background-color: $white;
 
   .dropdown-menu {
     height: 45vh;

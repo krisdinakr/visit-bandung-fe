@@ -10,7 +10,7 @@ export const Card: FC<CardProps> = ({ data, type }) => {
   if (type === 'secondary') {
     return (
       <div className="card mb-3 border-0 rounded-0 card--secondary">
-        <Link to="/" className="card__link card__link--secondary">
+        <Link to={data.slug} className="card__link card__link--secondary">
           <img
             src={data.images[0]}
             className="card__img card__img--secondary"
@@ -34,7 +34,7 @@ export const Card: FC<CardProps> = ({ data, type }) => {
   if (type === 'primary') {
     return (
       <div className="card mb-3 border-0 rounded-0">
-        <Link to="/" className="card__link card__link--primary">
+        <Link to={data.slug} className="card__link card__link--primary">
           <figure className="mb-0 overflow-hidden">
             <img
               src={data.images[0]}
@@ -54,9 +54,13 @@ export const Card: FC<CardProps> = ({ data, type }) => {
 
   return (
     <div className="card mb-3 border-0 rounded-0 card--overlay">
-      <Link to="/" className="card__link card__link--overlay">
+      <Link to={data.slug} className="card__link card__link--overlay">
         <figure className="mb-0 overflow-hidden">
-          <img src={data.images} className="card__img card__img--overlay" alt="..." />
+          <img
+            src={data.images}
+            className="card__img card__img--overlay"
+            alt={data.name}
+          />
         </figure>
         <div className="card-img-overlay">
           <h5 className="card__title card__title--overlay">{data.name}</h5>

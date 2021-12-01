@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { USER_ROUTES } from '../routes';
 
 export const Navbar = () => (
-  <nav className="navbar navbar-expand-xl navbar-light">
+  <nav className="navbar navbar-expand-xl navbar-light sticky-top shadow">
     <div className="container">
       <Link to={USER_ROUTES.ROOT} className="navbar-brand fw-bold fs-3 pb-xl-3">
         Visit Bandung

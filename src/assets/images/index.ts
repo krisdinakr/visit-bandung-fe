@@ -3,4 +3,4 @@ import culinary from './interest-culinary.jpg';
 import nature from './interest-nature.jpg';
 import culture from './interest-culture.jpg';
 
-export { shopping, culinary, nature, culture }
+export { shopping, culinary, nature, culture };
