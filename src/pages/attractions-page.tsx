@@ -5,7 +5,7 @@ import { useLocation } from 'react-router';
 
 export const AttractionsPage = () => {
   const location = useLocation();
-  console.log(location, 'here')
+  console.log(location, 'here');
 
   return (
     <div className="attractions-page">
@@ -15,19 +15,13 @@ export const AttractionsPage = () => {
         <Breadcrumb parent="Attractions" endpoint="Shopping" />
         <ul className="nav mb-3">
           <li className="me-3" onClick={() => console.log('here')}>
-           All
+            All
           </li>
-          <li className="me-3">
-            Mall &amp; Department Store
-          </li>
-          <li className="me-3">
-           Beauty
-          </li>
-          <li className="me-3">
-            Souvenir
-          </li>
+          <li className="me-3">Mall &amp; Department Store</li>
+          <li className="me-3">Beauty</li>
+          <li className="me-3">Souvenir</li>
         </ul>
-       
+
         <section className="attractions-page__wrapper">
           <div className="row py-3 ">
             {mustVisit.map((data) => (
