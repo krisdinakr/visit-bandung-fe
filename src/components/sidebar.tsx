@@ -14,7 +14,7 @@ export const Sidebar = () => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link to={ADMIN_ROUTES.ROOT} className="nav-link active">
+          <Link to={ADMIN_ROUTES.ATTRACTION_LIST} className="nav-link">
             <span>Attractions</span>
           </Link>
         </li>

@@ -12,6 +12,7 @@ export const USER_ROUTES = {
 };
 
 export const ADMIN_ROUTES = {
-  ROOT: '/dashboard',
+  ROOT: '/admin/dashboard',
   LOGIN: '/admin/login',
+  ATTRACTION_LIST: '/admin/attractions',
 };

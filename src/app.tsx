@@ -1,6 +1,12 @@
 import { Template } from 'components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage, AttractionsPage, LoginAdminPage, DashboardPage } from './pages';
+import {
+  HomePage,
+  AttractionsPage,
+  LoginAdminPage,
+  DashboardPage,
+  AttractionListPage,
+} from './pages';
 import { ADMIN_ROUTES, USER_ROUTES } from './routes';
 
 const App = () => (
@@ -10,8 +16,13 @@ const App = () => (
         <HomePage />
       </Route>
       <Route path={ADMIN_ROUTES.ROOT}>
-        <Template>
+        <Template title="Dashboard">
           <DashboardPage />
+        </Template>
+      </Route>
+      <Route path={ADMIN_ROUTES.ATTRACTION_LIST}>
+        <Template title="Attractions Table">
+          <AttractionListPage />
         </Template>
       </Route>
       <Route path={ADMIN_ROUTES.LOGIN}>
