@@ -1,4 +1,4 @@
-export const LoginAdminPage = () => {
+const LoginAdminPage = () => {
   return (
     <div className="login-admin-page">
       <div className="container">
@@ -32,3 +32,5 @@ export const LoginAdminPage = () => {
     </div>
   );
 };
+
+export default LoginAdminPage;

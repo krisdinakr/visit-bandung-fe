@@ -1,2 +1,7 @@
-export * from './home-page';
-export * from './attractions-page';
+import { 
+  DashboardPage,
+  LoginAdminPage } from './admin';
+
+import { HomePage, AttractionsPage } from './user';
+
+export { DashboardPage, LoginAdminPage, HomePage, AttractionsPage }

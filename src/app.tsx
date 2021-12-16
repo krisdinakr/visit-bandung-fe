@@ -1,6 +1,5 @@
-import { LoginAdminPage } from 'pages/admin/login-admin-page';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { HomePage, AttractionsPage } from './pages';
+import { HomePage, AttractionsPage, LoginAdminPage } from './pages';
 import { ADMIN_ROUTES, USER_ROUTES } from './routes';
 
 const App = () => (

@@ -2,7 +2,7 @@ import { Navbar, Hero, Card, Footer } from 'components';
 import hero from 'assets/images/hero.jpg';
 import { mustVisit, interestSection } from 'data';
 
-export const HomePage = () => (
+const HomePage = () => (
   <div className="home-page">
     <Navbar />
     <Hero img={hero} alt="Monumen Perjuangan Bandung" />
@@ -33,3 +33,5 @@ export const HomePage = () => (
     <Footer />
   </div>
 );
+
+export default HomePage;

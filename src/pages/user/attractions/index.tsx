@@ -3,7 +3,7 @@ import hero from 'assets/images/hero.jpg';
 import { mustVisit } from 'data';
 import { useLocation } from 'react-router';
 
-export const AttractionsPage = () => {
+const AttractionsPage = () => {
   const location = useLocation();
   console.log(location, 'here');
 
@@ -36,3 +36,5 @@ export const AttractionsPage = () => {
     </div>
   );
 };
+
+export default AttractionsPage;
