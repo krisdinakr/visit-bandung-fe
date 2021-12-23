@@ -6,6 +6,7 @@ import {
   LoginAdminPage,
   DashboardPage,
   AttractionListPage,
+  AttractionDetailsPage,
 } from './pages';
 import { ADMIN_ROUTES, USER_ROUTES } from './routes';
 
@@ -15,14 +16,19 @@ const App = () => (
       <Route exact path={USER_ROUTES.ROOT}>
         <HomePage />
       </Route>
-      <Route path={ADMIN_ROUTES.ROOT}>
+      <Route exact path={ADMIN_ROUTES.ROOT}>
         <Template title="Dashboard">
           <DashboardPage />
         </Template>
       </Route>
-      <Route path={ADMIN_ROUTES.ATTRACTION_LIST}>
+      <Route exact path={ADMIN_ROUTES.ATTRACTION_LIST}>
         <Template title="Attractions Table">
           <AttractionListPage />
+        </Template>
+      </Route>
+      <Route exact path={ADMIN_ROUTES.ATTRACTION_DETAILS}>
+        <Template title="Attraction Details">
+          <AttractionDetailsPage />
         </Template>
       </Route>
       <Route path={ADMIN_ROUTES.LOGIN}>

@@ -1,3 +1,7 @@
+const RouteParams = {
+  id: ':id',
+};
+
 export const USER_ROUTES = {
   ROOT: '/',
   ATTRACTIONS: ':attraction',
@@ -15,4 +19,5 @@ export const ADMIN_ROUTES = {
   ROOT: '/admin/dashboard',
   LOGIN: '/admin/login',
   ATTRACTION_LIST: '/admin/attractions',
+  ATTRACTION_DETAILS: `/admin/attractions/${RouteParams.id}`,
 };

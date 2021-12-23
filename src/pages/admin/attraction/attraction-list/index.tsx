@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AttractionService from 'services/attractions';
+import { ADMIN_ROUTES } from 'routes';
 
 const AttractionListPage = () => {
   const [attractions, setAttractions] = useState<Array<any> | null>(null);
@@ -36,9 +38,12 @@ const AttractionListPage = () => {
                   <td key={`${row.id}_${col}`}>{row[col]}</td>
                 ))}
                 <td key={`${row.id}_action`}>
-                  <button type="button" className="btn py-0 me-2">
+                  <Link
+                    className="btn py-0 me-2"
+                    to={`${ADMIN_ROUTES.ATTRACTION_LIST}/${row.id}`}
+                  >
                     <i className="fas fa-info-circle text-primary"></i>
-                  </button>
+                  </Link>
                   <button type="button" className="btn py-0">
                     <i className="fas fa-trash text-danger"></i>
                   </button>

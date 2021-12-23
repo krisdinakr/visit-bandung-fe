@@ -1,4 +1,9 @@
-import { DashboardPage, LoginAdminPage, AttractionListPage } from './admin';
+import {
+  DashboardPage,
+  LoginAdminPage,
+  AttractionListPage,
+  AttractionDetailsPage,
+} from './admin';
 
 import { HomePage, AttractionsPage } from './user';
 
@@ -8,4 +13,5 @@ export {
   HomePage,
   AttractionsPage,
   AttractionListPage,
+  AttractionDetailsPage,
 };

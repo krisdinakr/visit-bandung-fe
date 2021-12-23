@@ -18,6 +18,18 @@ abstract class BaseService {
         .catch((error) => reject(error));
     });
   };
+
+  public getById = (id: string, params?: any, headers?: any) => {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(`${this.ROOT_URL}/${id}`, {
+          params,
+          headers,
+        })
+        .then((response) => resolve(response.data))
+        .catch((error) => reject(error));
+    });
+  };
 }
 
 export default BaseService;
