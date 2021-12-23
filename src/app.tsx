@@ -7,6 +7,7 @@ import {
   DashboardPage,
   AttractionListPage,
   AttractionDetailsPage,
+  CreateAttractionPage,
 } from './pages';
 import { ADMIN_ROUTES, USER_ROUTES } from './routes';
 
@@ -24,6 +25,11 @@ const App = () => (
       <Route exact path={ADMIN_ROUTES.ATTRACTION_LIST}>
         <Template title="Attractions Table">
           <AttractionListPage />
+        </Template>
+      </Route>
+      <Route exact path={ADMIN_ROUTES.ATTRACTION_CREATE}>
+        <Template title="Create Attraction">
+          <CreateAttractionPage />
         </Template>
       </Route>
       <Route exact path={ADMIN_ROUTES.ATTRACTION_DETAILS}>
