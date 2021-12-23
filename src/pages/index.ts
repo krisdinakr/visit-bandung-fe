@@ -3,6 +3,7 @@ import {
   LoginAdminPage,
   AttractionListPage,
   AttractionDetailsPage,
+  CreateAttractionPage,
 } from './admin';
 
 import { HomePage, AttractionsPage } from './user';
@@ -14,4 +15,5 @@ export {
   AttractionsPage,
   AttractionListPage,
   AttractionDetailsPage,
+  CreateAttractionPage,
 };
