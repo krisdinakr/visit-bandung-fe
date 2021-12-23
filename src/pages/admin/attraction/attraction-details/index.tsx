@@ -25,8 +25,8 @@ const AttractionDetailsPage = () => {
   return (
     <div className="border border-2 rounded p-4 mb-5">
       <div className="details">
-        <div className="mb-1 row">
-          <label htmlFor="name" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label htmlFor="name" className="col-sm-3 col-form-label fw-bold">
             Name
           </label>
           <div className="col-sm-9">
@@ -39,8 +39,8 @@ const AttractionDetailsPage = () => {
             />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="category" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label htmlFor="category" className="col-sm-3 col-form-label fw-bold">
             Category
           </label>
           <div className="col-sm-9">
@@ -53,8 +53,11 @@ const AttractionDetailsPage = () => {
             />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="subCategory" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label
+            htmlFor="subCategory"
+            className="col-sm-3 col-form-label fw-bold"
+          >
             Sub Category
           </label>
           <div className="col-sm-9">
@@ -67,8 +70,8 @@ const AttractionDetailsPage = () => {
             />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="slug" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label htmlFor="slug" className="col-sm-3 col-form-label fw-bold">
             Slug
           </label>
           <div className="col-sm-9">
@@ -81,13 +84,16 @@ const AttractionDetailsPage = () => {
             />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="description" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label
+            htmlFor="description"
+            className="col-sm-3 col-form-label fw-bold"
+          >
             Description
           </label>
           <div className="col-sm-9">
             <textarea
-              rows={5}
+              rows={6}
               readOnly
               className="form-control-plaintext px-2"
               id="description"
@@ -95,16 +101,19 @@ const AttractionDetailsPage = () => {
             ></textarea>
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="images" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label htmlFor="images" className="col-sm-3 col-form-label fw-bold">
             Images
           </label>
-          <div className="col-sm-9">
+          <div className="col-sm-9 py-3">
             <Carousel images={attraction.images} />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="createdAt" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label
+            htmlFor="createdAt"
+            className="col-sm-3 col-form-label fw-bold"
+          >
             Created At
           </label>
           <div className="col-sm-9">
@@ -117,8 +126,11 @@ const AttractionDetailsPage = () => {
             />
           </div>
         </div>
-        <div className="mb-1 row">
-          <label htmlFor="updatedAt" className="col-sm-3 col-form-label">
+        <div className="mb-2 row">
+          <label
+            htmlFor="updatedAt"
+            className="col-sm-3 col-form-label fw-bold"
+          >
             Updated At
           </label>
           <div className="col-sm-9">
