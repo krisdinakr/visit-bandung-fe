@@ -6,3 +6,4 @@ export * from './breadcrumb';
 export * from './header';
 export * from './template';
 export * from './sidebar';
+export * from './carousel';
