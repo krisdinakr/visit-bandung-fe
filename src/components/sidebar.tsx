@@ -34,6 +34,19 @@ export const Sidebar = () => {
             </Link>
           </li>
         </ul>
+        <hr />
+        <div className="nav-item">
+          <Link
+            to={ADMIN_ROUTES.ATTRACTION_CREATE}
+            className={
+              pathname === ADMIN_ROUTES.ATTRACTION_CREATE
+                ? 'nav-link active'
+                : 'nav-link'
+            }
+          >
+            <span>Create Attraction</span>
+          </Link>
+        </div>
       </div>
     </nav>
   );
