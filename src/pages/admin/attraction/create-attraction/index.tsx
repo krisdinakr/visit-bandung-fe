@@ -1,23 +1,17 @@
+import { Input } from 'components';
+
 const CreateAttractionPage = () => {
   return (
     <div className="border border-2 rounded p-4 mb-5">
       <form>
-        <div className="form-floating mb-3">
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="name"
-          />
-          <label htmlFor="name">Name</label>
-        </div>
+        <Input variant="floating" type="text" label="name" />
         <div className="form-floating mb-3">
           <select
             className="form-select"
             id="category"
             aria-label="Category Field"
           >
-            <option selected disabled>
+            <option defaultValue="" disabled>
               Select Category
             </option>
             <option value={'CULTURE & ART'}>CULTURE &amp; ART</option>

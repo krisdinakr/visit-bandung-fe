@@ -1,4 +1,4 @@
-import { Carousel } from 'components';
+import { Carousel, Input } from 'components';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AttractionService from 'services/attractions';
@@ -25,65 +25,30 @@ const AttractionDetailsPage = () => {
   return (
     <div className="border border-2 rounded p-4 mb-5">
       <div className="details">
-        <div className="mb-2 row">
-          <label htmlFor="name" className="col-sm-3 col-form-label fw-bold">
-            Name
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="name"
-              value={attraction.name}
-            />
-          </div>
-        </div>
-        <div className="mb-2 row">
-          <label htmlFor="category" className="col-sm-3 col-form-label fw-bold">
-            Category
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="category"
-              value={attraction.category}
-            />
-          </div>
-        </div>
-        <div className="mb-2 row">
-          <label
-            htmlFor="subCategory"
-            className="col-sm-3 col-form-label fw-bold"
-          >
-            Sub Category
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="subCategory"
-              value={attraction.subCategory}
-            />
-          </div>
-        </div>
-        <div className="mb-2 row">
-          <label htmlFor="slug" className="col-sm-3 col-form-label fw-bold">
-            Slug
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="slug"
-              value={attraction.slug}
-            />
-          </div>
-        </div>
+        <Input
+          variant="read-only"
+          type="text"
+          label="name"
+          value={attraction.name}
+        />
+        <Input
+          variant="read-only"
+          type="text"
+          label="category"
+          value={attraction.category}
+        />
+        <Input
+          variant="read-only"
+          type="text"
+          label="subCategory"
+          value={attraction.subCategory}
+        />
+        <Input
+          variant="read-only"
+          type="text"
+          label="slug"
+          value={attraction.slug}
+        />
         <div className="mb-2 row">
           <label
             htmlFor="description"
@@ -109,40 +74,18 @@ const AttractionDetailsPage = () => {
             <Carousel images={attraction.images} />
           </div>
         </div>
-        <div className="mb-2 row">
-          <label
-            htmlFor="createdAt"
-            className="col-sm-3 col-form-label fw-bold"
-          >
-            Created At
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="createdAt"
-              value={attraction.createdAt}
-            />
-          </div>
-        </div>
-        <div className="mb-2 row">
-          <label
-            htmlFor="updatedAt"
-            className="col-sm-3 col-form-label fw-bold"
-          >
-            Updated At
-          </label>
-          <div className="col-sm-9">
-            <input
-              type="text"
-              readOnly
-              className="form-control-plaintext px-2"
-              id="updatedAt"
-              value={attraction.updatedAt}
-            />
-          </div>
-        </div>
+        <Input
+          variant="read-only"
+          type="text"
+          label="createdAt"
+          value={attraction.createdAt}
+        />
+        <Input
+          variant="read-only"
+          type="text"
+          label="updatedAt"
+          value={attraction.updatedAt}
+        />
         <button type="button" className="btn btn-primary mt-3">
           Edit
         </button>
