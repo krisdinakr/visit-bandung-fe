@@ -8,6 +8,7 @@ import {
   AttractionListPage,
   AttractionDetailsPage,
   CreateAttractionPage,
+  UpdateAttractionPage,
 } from './pages';
 import { ADMIN_ROUTES, USER_ROUTES } from './routes';
 
@@ -30,6 +31,11 @@ const App = () => (
       <Route exact path={ADMIN_ROUTES.ATTRACTION_CREATE}>
         <Template title="Create Attraction">
           <CreateAttractionPage />
+        </Template>
+      </Route>
+      <Route exact path={ADMIN_ROUTES.ATTRACTION_UPDATE}>
+        <Template title="Update Attraction">
+          <UpdateAttractionPage />
         </Template>
       </Route>
       <Route exact path={ADMIN_ROUTES.ATTRACTION_DETAILS}>

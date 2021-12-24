@@ -1,13 +1,22 @@
 import { FC, HTMLInputTypeAttribute } from 'react';
 
 interface InputProps {
-  variant: 'floating' | 'read-only';
+  variant: 'floating' | 'read-only' | 'normal';
   type: HTMLInputTypeAttribute;
   label: string;
   value?: string;
+  defaultValue?: string;
+  onChange?: (e: any) => void;
 }
 
-export const Input: FC<InputProps> = ({ variant, type, label, value }) => {
+export const Input: FC<InputProps> = ({
+  variant,
+  type,
+  label,
+  value,
+  defaultValue,
+  onChange,
+}) => {
   const newLabel = label.replace(/([a-z])([A-Z])/g, '$1 $2');
 
   if (variant === 'floating')
@@ -36,10 +45,12 @@ export const Input: FC<InputProps> = ({ variant, type, label, value }) => {
       <div className="col-sm-9">
         <input
           type="text"
-          readOnly
+          readOnly={variant === 'read-only'}
           className="form-control-plaintext px-2"
           id={label}
+          defaultValue={defaultValue}
           value={value}
+          onChange={onChange}
         />
       </div>
     </div>

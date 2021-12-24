@@ -1,7 +1,8 @@
 import { Carousel, Input } from 'components';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AttractionService from 'services/attractions';
+import { ADMIN_ROUTES } from 'routes';
 
 const AttractionDetailsPage = () => {
   const { id } = useParams<any>();
@@ -29,25 +30,25 @@ const AttractionDetailsPage = () => {
           variant="read-only"
           type="text"
           label="name"
-          value={attraction.name}
+          defaultValue={attraction.name}
         />
         <Input
           variant="read-only"
           type="text"
           label="category"
-          value={attraction.category}
+          defaultValue={attraction.category}
         />
         <Input
           variant="read-only"
           type="text"
           label="subCategory"
-          value={attraction.subCategory}
+          defaultValue={attraction.subCategory}
         />
         <Input
           variant="read-only"
           type="text"
           label="slug"
-          value={attraction.slug}
+          defaultValue={attraction.slug}
         />
         <div className="mb-2 row">
           <label
@@ -78,17 +79,22 @@ const AttractionDetailsPage = () => {
           variant="read-only"
           type="text"
           label="createdAt"
-          value={attraction.createdAt}
+          defaultValue={attraction.createdAt}
         />
         <Input
           variant="read-only"
           type="text"
           label="updatedAt"
-          value={attraction.updatedAt}
+          defaultValue={attraction.updatedAt}
         />
-        <button type="button" className="btn btn-primary mt-3">
-          Edit
-        </button>
+        <div className="d-flex justify-content-end mt-3">
+          <Link
+            className="btn btn-primary mt-3"
+            to={`${ADMIN_ROUTES.ATTRACTION_LIST}/update/${id}`}
+          >
+            Update
+          </Link>
+        </div>
       </div>
     </div>
   );

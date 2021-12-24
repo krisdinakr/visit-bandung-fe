@@ -8,3 +8,4 @@ export * from './template';
 export * from './sidebar';
 export * from './carousel';
 export * from './input';
+export * from './select';

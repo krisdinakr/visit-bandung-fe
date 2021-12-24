@@ -21,4 +21,5 @@ export const ADMIN_ROUTES = {
   ATTRACTION_LIST: '/admin/attractions',
   ATTRACTION_DETAILS: `/admin/attractions/${RouteParams.id}`,
   ATTRACTION_CREATE: '/admin/attractions/create',
+  ATTRACTION_UPDATE: `/admin/attractions/update/${RouteParams.id}`,
 };
