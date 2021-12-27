@@ -60,52 +60,32 @@ export const Select: FC<SelectProps> = ({
 
   if (variant === 'category')
     return (
-      <div className="mb-2 row">
-        <label
-          htmlFor="category"
-          className="col-sm-3 col-form-label fw-bold text-capitalize"
-        >
-          Category
-        </label>
-        <div className="col-sm-9">
-          <select
-            className="form-select"
-            aria-label="Category Field"
-            value={category}
-            onChange={onChange}
-          >
-            <option value="" disabled>
-              Select Category
-            </option>
-            {CATEGORIES.map((category) => (
-              <option key={category.name} value={category.name}>
-                {category.name}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
+      <select
+        className="form-select"
+        aria-label="Category Field"
+        value={category}
+        onChange={onChange}
+      >
+        <option value="" disabled>
+          Select Category
+        </option>
+        {CATEGORIES.map((category) => (
+          <option key={category.name} value={category.name}>
+            {category.name}
+          </option>
+        ))}
+      </select>
     );
 
   return (
-    <div className="mb-2 row">
-      <label
-        htmlFor="subCategory"
-        className="col-sm-3 col-form-label fw-bold text-capitalize"
-      >
-        Sub Category
-      </label>
-      <div className="col-sm-9">
-        <select
-          className="form-select"
-          aria-label="Sub Category Field"
-          value={subCategory}
-          onChange={onChange}
-        >
-          <option value="">Select Sub Category</option>
-          {renderOptions()}
-        </select>
-      </div>
-    </div>
+    <select
+      className="form-select"
+      aria-label="Sub Category Field"
+      value={subCategory}
+      onChange={onChange}
+    >
+      <option value="">Select Sub Category</option>
+      {renderOptions()}
+    </select>
   );
 };

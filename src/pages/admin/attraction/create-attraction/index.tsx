@@ -1,42 +1,36 @@
-import { Input } from 'components';
+import { Input, Select } from 'components';
+import { useState } from 'react';
 
 const CreateAttractionPage = () => {
+  const [name, setName] = useState<string>('');
+  const [category, setCategory] = useState<string>('');
+  const [subCategory, setSubCategory] = useState<string>('');
+
   return (
     <div className="border border-2 rounded p-4 mb-5">
       <form>
-        <Input variant="floating" type="text" label="name" />
+        <Input
+          variant="floating"
+          type="text"
+          label="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
         <div className="form-floating mb-3">
-          <select
-            className="form-select"
-            id="category"
-            aria-label="Category Field"
-          >
-            <option defaultValue="" disabled>
-              Select Category
-            </option>
-            <option value={'CULTURE & ART'}>CULTURE &amp; ART</option>
-            <option value={'SHOPPING'}>SHOPPING</option>
-            <option value={'NATURE'}>NATURE</option>
-            <option value={'CULINARY'}>CULINARY</option>
-            <option value={'HISTORY & HERITAGE'}>HISTORY &amp; HERITAGE</option>
-          </select>
+          <Select
+            variant="category"
+            category={category}
+            onChange={(e) => setCategory(e.target.value)}
+          />
           <label htmlFor="category">Category</label>
         </div>
         <div className="form-floating mb-3">
-          <select
-            className="form-select"
-            id="subCategory"
-            aria-label="Sub Category Field"
-          >
-            <option selected disabled>
-              Select SubCategory
-            </option>
-            {/* <option value={'CULTURE & ART'}>CULTURE &amp; ART</option>
-            <option value={'SHOPPING'}>SHOPPING</option>
-            <option value={'NATURE'}>NATURE</option>
-            <option value={'CULINARY'}>CULINARY</option>
-            <option value={'HISTORY & HERITAGE'}>HISTORY &amp; HERITAGE</option> */}
-          </select>
+          <Select
+            variant="subCategory"
+            category={category}
+            subCategory={subCategory}
+            onChange={(e) => setSubCategory(e.target.value)}
+          />
           <label htmlFor="subCategory">Sub Category</label>
         </div>
         <div className="form-floating mb-3">

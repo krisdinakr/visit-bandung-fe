@@ -37,17 +37,37 @@ const UpdateAttractionPage = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <Select
-          variant="category"
-          category={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
-        <Select
-          variant="subCategory"
-          category={category}
-          subCategory={subCategory}
-          onChange={(e) => setSubCategory(e.target.value)}
-        />
+        <div className="mb-2 row">
+          <label
+            htmlFor="category"
+            className="col-sm-3 col-form-label fw-bold text-capitalize"
+          >
+            Category
+          </label>
+          <div className="col-sm-9">
+            <Select
+              variant="category"
+              category={category}
+              onChange={(e) => setCategory(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="mb-2 row">
+          <label
+            htmlFor="subCategory"
+            className="col-sm-3 col-form-label fw-bold text-capitalize"
+          >
+            Sub Category
+          </label>
+          <div className="col-sm-9">
+            <Select
+              variant="subCategory"
+              category={category}
+              subCategory={subCategory}
+              onChange={(e) => setSubCategory(e.target.value)}
+            />
+          </div>
+        </div>
         <div className="mb-2 row">
           <label
             htmlFor="description"
