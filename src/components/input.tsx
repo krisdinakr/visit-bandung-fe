@@ -36,6 +36,28 @@ export const Input: FC<InputProps> = ({
       </div>
     );
 
+  if (variant === 'read-only')
+    return (
+      <div className="mb-2 row">
+        <label
+          htmlFor={label}
+          className="col-sm-3 col-form-label fw-bold text-capitalize"
+        >
+          {newLabel}
+        </label>
+        <div className="col-sm-9">
+          <input
+            type="text"
+            readOnly
+            className="form-control-plaintext px-2"
+            id={label}
+            defaultValue={defaultValue}
+            onChange={onChange}
+          />
+        </div>
+      </div>
+    );
+
   return (
     <div className="mb-2 row">
       <label
@@ -47,10 +69,8 @@ export const Input: FC<InputProps> = ({
       <div className="col-sm-9">
         <input
           type="text"
-          readOnly={variant === 'read-only'}
           className="form-control-plaintext px-2"
           id={label}
-          defaultValue={defaultValue}
           value={value}
           onChange={onChange}
         />
