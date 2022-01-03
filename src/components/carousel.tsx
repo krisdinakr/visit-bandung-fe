@@ -14,6 +14,7 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
       <div className="carousel-indicators">
         {images.map((el, i) => (
           <button
+            key={i}
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide-to={i}
@@ -24,7 +25,10 @@ export const Carousel: FC<CarouselProps> = ({ images }) => {
       </div>
       <div className="carousel-inner">
         {images.map((img, i) => (
-          <div className={i === 0 ? 'carousel-item active' : 'carousel-item'}>
+          <div
+            key={img}
+            className={i === 0 ? 'carousel-item active' : 'carousel-item'}
+          >
             <img src={img} className="carousel-img" alt="..." />
           </div>
         ))}
