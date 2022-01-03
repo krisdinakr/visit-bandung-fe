@@ -4,20 +4,36 @@ import AttractionService from 'services/attractions';
 import { ADMIN_ROUTES } from 'routes';
 
 const AttractionListPage = () => {
-  const [attractions, setAttractions] = useState<Array<any> | null>(null);
+  const [attractions, setAttractions] = useState<Array<any>>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const tableCol = ['name', 'category', 'subCategory'];
 
   const fetchApi = useCallback(async () => {
+    setIsLoading(true);
     const attractionService = new AttractionService();
     const result: any = await attractionService.get();
     if (result.status === 'success') {
       setAttractions(result.data);
     }
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
     fetchApi();
   }, [fetchApi]);
+
+  if (isLoading)
+    return (
+      <div
+        className="container d-flex flex-column justify-content-center align-items-center"
+        style={{ height: '70vh' }}
+      >
+        <div className="spinner-grow text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        <span className="mt-3">Loading...</span>
+      </div>
+    );
 
   return (
     <div>
@@ -50,9 +66,9 @@ const AttractionListPage = () => {
                 </td>
               </tr>
             ))}
-          {!attractions && (
+          {!attractions.length && (
             <tr>
-              <td className="text-center" colSpan={tableCol.length}>
+              <td className="text-center" colSpan={4}>
                 No Data
               </td>
             </tr>
