@@ -27,6 +27,8 @@ export const Input: FC<InputProps> = ({
           className="form-control"
           id={label}
           placeholder={label}
+          value={value}
+          onChange={onChange}
         />
         <label htmlFor={label} className="text-capitalize">
           {label}

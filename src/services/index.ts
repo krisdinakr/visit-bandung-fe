@@ -30,6 +30,15 @@ abstract class BaseService {
         .catch((error) => reject(error));
     });
   };
+
+  public post = (data: any, headers?: any) => {
+    return new Promise((resolve, reject) => {
+      axios
+        .post(this.ROOT_URL, data, headers)
+        .then((response) => resolve(response.data))
+        .catch((error) => reject(error));
+    });
+  };
 }
 
 export default BaseService;
