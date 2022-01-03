@@ -21,7 +21,18 @@ const AttractionDetailsPage = () => {
     fetchAttraction();
   }, [fetchAttraction]);
 
-  if (!attraction) return <p>Loading...</p>;
+  if (!attraction)
+    return (
+      <div
+        className="container d-flex flex-column justify-content-center align-items-center"
+        style={{ height: '70vh' }}
+      >
+        <div className="spinner-grow text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        <span className="mt-3">Loading...</span>
+      </div>
+    );
 
   return (
     <div className="border border-2 rounded p-4 mb-5">
