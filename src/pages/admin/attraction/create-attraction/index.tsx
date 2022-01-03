@@ -10,9 +10,11 @@ const CreateAttractionPage: FC = () => {
   const [subCategory, setSubCategory] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [images, setImages] = useState<any>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const history = useHistory();
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     const data = new FormData();
     data.append('name', name);
     data.append('category', category);
@@ -26,6 +28,7 @@ const CreateAttractionPage: FC = () => {
     const attractionService = new AttractionService();
     const response: any = await attractionService.post(data);
     console.log('response', response);
+    setIsLoading(false);
     history.push(ADMIN_ROUTES.ATTRACTION_LIST);
   };
 
@@ -85,8 +88,10 @@ const CreateAttractionPage: FC = () => {
             type="button"
             className="btn btn-secondary"
             onClick={handleSubmit}
+            disabled={isLoading}
           >
-            Create
+            {!isLoading && <span>Submit</span>}
+            {isLoading && <span>Loading...</span>}
           </button>
         </div>
       </div>
