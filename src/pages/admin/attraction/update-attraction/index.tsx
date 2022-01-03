@@ -1,21 +1,28 @@
-import { Input, Select } from 'components';
 import { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import { Input, Select } from 'components';
+import { ADMIN_ROUTES } from 'routes';
 import AttractionService from 'services/attractions';
 
 const UpdateAttractionPage = () => {
   const { id } = useParams<any>();
-  const [place, setPlace] = useState<null | any>(null);
-  const [isloading, setIsLoading] = useState<Boolean>(true);
-  const [name, setName] = useState<string>();
+  const [isloading, setIsLoading] = useState<Boolean>(false);
+  const [name, setName] = useState<string>('');
   const [category, setCategory] = useState<string>('');
-  const [subCategory, setSubCategory] = useState<string>();
+  const [subCategory, setSubCategory] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
+  const [images, setImages] = useState<any>(null);
+  const history = useHistory();
 
   const fetchAttraction = useCallback(async () => {
+    setIsLoading(true);
     const attractionService = new AttractionService();
     const result: any = await attractionService.getById(id);
     if (result.status === 'success') {
-      setPlace(result.data);
+      setName(result.data.name);
+      setCategory(result.data.category);
+      setSubCategory(result.data.subCategory);
+      setDescription(result.data.description);
     }
     setIsLoading(false);
   }, [id]);
@@ -24,7 +31,29 @@ const UpdateAttractionPage = () => {
     fetchAttraction();
   }, [fetchAttraction]);
 
-  if (isloading) return <p>Loading...</p>;
+  const handleCancel = () =>
+    history.push(`${ADMIN_ROUTES.ATTRACTION_LIST}/${id}`);
+
+  const handleSubmit = () => {
+    console.log('name', name);
+    console.log('category', category);
+    console.log('subCategory', subCategory);
+    console.log('description', description);
+    console.log('images', images);
+  };
+
+  if (isloading)
+    return (
+      <div
+        className="container d-flex flex-column justify-content-center align-items-center"
+        style={{ height: '70vh' }}
+      >
+        <div className="spinner-grow text-primary" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        <span className="mt-3">Loading...</span>
+      </div>
+    );
 
   return (
     <div className="border border-2 rounded p-4 mb-5">
@@ -33,7 +62,6 @@ const UpdateAttractionPage = () => {
           variant="normal"
           type="text"
           label="name"
-          defaultValue={place.name}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
@@ -80,7 +108,8 @@ const UpdateAttractionPage = () => {
               rows={6}
               className="form-control-plaintext px-2"
               id="description"
-              defaultValue={place.description}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
         </div>
@@ -89,14 +118,28 @@ const UpdateAttractionPage = () => {
             Images
           </label>
           <div className="col-sm-9">
-            <input className="form-control" type="file" id="images" multiple />
+            <input
+              className="form-control"
+              type="file"
+              id="images"
+              multiple
+              onChange={(e) => setImages(e.target.files)}
+            />
           </div>
         </div>
         <div className="d-flex justify-content-end mt-3 gap-3">
-          <button type="button" className="btn btn-primary">
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleCancel}
+          >
             Cancel
           </button>
-          <button type="button" className="btn btn-secondary">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={handleSubmit}
+          >
             Save Changes
           </button>
         </div>
