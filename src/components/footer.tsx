@@ -12,8 +12,11 @@ export const Footer = () => (
         </div>
 
         <div className="col-6 col-lg-4">
-          <h5 className="footer__section">Tourist Attractions</h5>
+          <h5 className="footer__section">Things To Do</h5>
           <div className="nav flex-column">
+            <Link to="/" className="footer__link">
+              Attractions
+            </Link>
             <Link to="/" className="footer__link">
               Culture &amp; Art
             </Link>
@@ -27,7 +30,7 @@ export const Footer = () => (
               Culinary
             </Link>
             <Link to="/" className="footer__link">
-              History &amp; Heritage
+              History
             </Link>
           </div>
         </div>
