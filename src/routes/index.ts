@@ -4,6 +4,7 @@ const RouteParams = {
 
 export const USER_ROUTES = {
   ROOT: '/',
+  CATEGORY: '/:category',
   ATTRACTIONS: '/attractions',
   CULTURE_ART: '/culture-art',
   SHOPPING: '/shopping',

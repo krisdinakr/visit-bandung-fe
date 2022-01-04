@@ -46,7 +46,7 @@ const App = () => (
       <Route path={ADMIN_ROUTES.LOGIN}>
         <LoginAdminPage />
       </Route>
-      <Route>
+      <Route exact path={USER_ROUTES.CATEGORY}>
         <CategoryPage />
       </Route>
     </Switch>
