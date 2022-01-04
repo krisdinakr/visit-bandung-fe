@@ -10,3 +10,4 @@ export * from './carousel';
 export * from './input';
 export * from './select';
 export * from './modal';
+export * from './alert';
