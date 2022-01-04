@@ -14,7 +14,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({ parent, endpoint }) => {
         </li>
         <li className="breadcrumb-item">{parent}</li>
         <li className="breadcrumb-item active" aria-current="page">
-          <b>{endpoint}</b>
+          <b className="text-capitalize">{endpoint}</b>
         </li>
       </ol>
     </nav>
