@@ -39,6 +39,15 @@ abstract class BaseService {
         .catch((error) => reject(error));
     });
   };
+
+  public patch = (id: string, data: any, headers?: any) => {
+    return new Promise((resolve, reject) => {
+      axios
+        .patch(`${this.ROOT_URL}/${id}`, data, headers)
+        .then((response) => resolve(response.data))
+        .catch((error) => reject(error));
+    });
+  };
 }
 
 export default BaseService;
