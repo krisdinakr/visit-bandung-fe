@@ -1,18 +1,40 @@
 import { Breadcrumb, Card, Footer, Hero, Navbar } from 'components';
 import hero from 'assets/images/hero.jpg';
-import { mustVisit } from 'data';
-import { useLocation } from 'react-router';
+import { useLocation } from 'react-router-dom';
+import { useCallback, useEffect, useState } from 'react';
+import { CategoryService } from 'services/category';
 
 const CategoryPage = () => {
   const location = useLocation();
-  console.log(location, 'here');
+  const pathname = location.pathname.slice(1);
+  const [places, setPlaces] = useState<Array<any>>([]);
+
+  const fetchPlaces = useCallback(async () => {
+    try {
+      const categoryService = new CategoryService();
+      const result: any = await categoryService.getById(pathname);
+      if (result.status === 'success') {
+        setPlaces(result.data);
+      }
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [pathname]);
+
+  useEffect(() => {
+    fetchPlaces();
+  }, [fetchPlaces]);
 
   return (
     <div className="category-page">
       <Navbar />
       <Hero img={hero} alt="Monumen Perjuangan Bandung" />
       <div className="container pb-5 pt-4">
-        <Breadcrumb parent="Attractions" endpoint="Shopping" />
+        <Breadcrumb
+          parent="Things To Do"
+          endpoint={pathname.replace(/-/gm, ' ')}
+        />
         <ul className="nav mb-3">
           <li className="me-3" onClick={() => console.log('here')}>
             All
@@ -24,9 +46,9 @@ const CategoryPage = () => {
 
         <section className="category-page__wrapper">
           <div className="row py-3 ">
-            {mustVisit.map((data) => (
-              <div className="col-md-4" key={data.id}>
-                <Card type="secondary" data={data} />
+            {places.map((places) => (
+              <div className="col-md-4" key={places.id}>
+                <Card type="secondary" data={places} />
               </div>
             ))}
           </div>
