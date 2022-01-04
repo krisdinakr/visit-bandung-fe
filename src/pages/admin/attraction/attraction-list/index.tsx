@@ -93,7 +93,7 @@ const AttractionListPage = () => {
                 <td key={`${row.id}_action`}>
                   <Link
                     className="btn py-0 me-2"
-                    to={`${ADMIN_ROUTES.ATTRACTION_LIST}/${row.id}`}
+                    to={`${ADMIN_ROUTES.PLACE_LIST}/${row.id}`}
                   >
                     <i className="fas fa-info-circle text-primary"></i>
                   </Link>

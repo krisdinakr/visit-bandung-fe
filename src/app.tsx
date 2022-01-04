@@ -23,22 +23,22 @@ const App = () => (
           <DashboardPage />
         </Template>
       </Route>
-      <Route exact path={ADMIN_ROUTES.ATTRACTION_LIST}>
+      <Route exact path={ADMIN_ROUTES.PLACE_LIST}>
         <Template title="Attractions Table">
           <AttractionListPage />
         </Template>
       </Route>
-      <Route exact path={ADMIN_ROUTES.ATTRACTION_CREATE}>
+      <Route exact path={ADMIN_ROUTES.PLACE_CREATE}>
         <Template title="Create Attraction">
           <CreateAttractionPage />
         </Template>
       </Route>
-      <Route exact path={ADMIN_ROUTES.ATTRACTION_UPDATE}>
+      <Route exact path={ADMIN_ROUTES.PLACE_UPDATE}>
         <Template title="Update Attraction">
           <UpdateAttractionPage />
         </Template>
       </Route>
-      <Route exact path={ADMIN_ROUTES.ATTRACTION_DETAILS}>
+      <Route exact path={ADMIN_ROUTES.PLACE_DETAILS}>
         <Template title="Attraction Details">
           <AttractionDetailsPage />
         </Template>

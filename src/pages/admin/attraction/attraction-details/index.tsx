@@ -101,7 +101,7 @@ const AttractionDetailsPage = () => {
         <div className="d-flex justify-content-end mt-3">
           <Link
             className="btn btn-primary mt-3"
-            to={`${ADMIN_ROUTES.ATTRACTION_LIST}/update/${id}`}
+            to={`${ADMIN_ROUTES.PLACE_LIST}/update/${id}`}
           >
             Update
           </Link>

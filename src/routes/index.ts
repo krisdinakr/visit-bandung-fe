@@ -4,7 +4,7 @@ const RouteParams = {
 
 export const USER_ROUTES = {
   ROOT: '/',
-  ATTRACTIONS: ':attraction',
+  ATTRACTIONS: '/attractions',
   CULTURE_ART: '/culture-art',
   SHOPPING: '/shopping',
   NATURE: '/nature',
@@ -18,8 +18,8 @@ export const USER_ROUTES = {
 export const ADMIN_ROUTES = {
   ROOT: '/admin/dashboard',
   LOGIN: '/admin/login',
-  ATTRACTION_LIST: '/admin/attractions',
-  ATTRACTION_DETAILS: `/admin/attractions/${RouteParams.id}`,
-  ATTRACTION_CREATE: '/admin/attractions/create',
-  ATTRACTION_UPDATE: `/admin/attractions/update/${RouteParams.id}`,
+  PLACE_LIST: '/admin/places',
+  PLACE_DETAILS: `/admin/places/${RouteParams.id}`,
+  PLACE_CREATE: '/admin/places/create',
+  PLACE_UPDATE: `/admin/places/update/${RouteParams.id}`,
 };

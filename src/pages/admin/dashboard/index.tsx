@@ -10,7 +10,7 @@ const DashboardPage = () => (
           <div className="dashboard-page__title-info">Places</div>
         </div>
         <Link
-          to={ADMIN_ROUTES.ATTRACTION_LIST}
+          to={ADMIN_ROUTES.PLACE_LIST}
           className="dashboard-page__button-info"
         >
           more info
@@ -22,7 +22,7 @@ const DashboardPage = () => (
           <div className="dashboard-page__title-info">Categories</div>
         </div>
         <Link
-          to={ADMIN_ROUTES.ATTRACTION_LIST}
+          to={ADMIN_ROUTES.PLACE_LIST}
           className="dashboard-page__button-info"
         >
           more info

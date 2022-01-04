@@ -23,9 +23,9 @@ export const Sidebar = () => {
           </li>
           <li className="nav-item">
             <Link
-              to={ADMIN_ROUTES.ATTRACTION_LIST}
+              to={ADMIN_ROUTES.PLACE_LIST}
               className={
-                pathname === ADMIN_ROUTES.ATTRACTION_LIST
+                pathname === ADMIN_ROUTES.PLACE_LIST
                   ? 'nav-link active'
                   : 'nav-link'
               }
@@ -37,9 +37,9 @@ export const Sidebar = () => {
         <hr />
         <div className="nav-item">
           <Link
-            to={ADMIN_ROUTES.ATTRACTION_CREATE}
+            to={ADMIN_ROUTES.PLACE_CREATE}
             className={
-              pathname === ADMIN_ROUTES.ATTRACTION_CREATE
+              pathname === ADMIN_ROUTES.PLACE_CREATE
                 ? 'nav-link active'
                 : 'nav-link'
             }

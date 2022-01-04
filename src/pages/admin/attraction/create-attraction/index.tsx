@@ -29,7 +29,7 @@ const CreateAttractionPage: FC = () => {
     const response: any = await attractionService.post(data);
     console.log('response', response);
     setIsLoading(false);
-    history.push(ADMIN_ROUTES.ATTRACTION_LIST);
+    history.push(ADMIN_ROUTES.PLACE_LIST);
   };
 
   return (
