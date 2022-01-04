@@ -9,7 +9,7 @@ export const USER_ROUTES = {
   SHOPPING: '/shopping',
   NATURE: '/nature',
   CULINARY: '/culinary',
-  HISTORY_HERITAGE: '/history-heritage',
+  HISTORY: '/history',
   ABOUT_BANDUNG: '/about-bandung',
   HISTORY_BANDUNG: '/history-to-bandung',
   GETTING_TO_BANDUNG: '/getting-to-bandung',
