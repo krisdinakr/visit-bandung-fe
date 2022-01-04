@@ -1,8 +1,13 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { Input, Select } from 'components';
+import { Input, Select, Alert } from 'components';
 import { ADMIN_ROUTES } from 'routes';
 import AttractionService from 'services/attractions';
+
+type NotificationType = {
+  type: 'error' | 'info';
+  message: string;
+};
 
 const UpdateAttractionPage = () => {
   const { id } = useParams<any>();
@@ -12,20 +17,24 @@ const UpdateAttractionPage = () => {
   const [subCategory, setSubCategory] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const [images, setImages] = useState<any>(null);
+  const [notification, setNotification] = useState<NotificationType | null>(
+    null
+  );
   const history = useHistory();
+  const attractionService = useMemo(() => new AttractionService(), []);
 
   const fetchAttraction = useCallback(async () => {
     setIsLoading(true);
-    const attractionService = new AttractionService();
     const result: any = await attractionService.getById(id);
     if (result.status === 'success') {
       setName(result.data.name);
       setCategory(result.data.category);
       setSubCategory(result.data.subCategory);
       setDescription(result.data.description);
+      setImages(result.data.images);
     }
     setIsLoading(false);
-  }, [id]);
+  }, [id, attractionService]);
 
   useEffect(() => {
     fetchAttraction();
@@ -34,13 +43,33 @@ const UpdateAttractionPage = () => {
   const handleCancel = () =>
     history.push(`${ADMIN_ROUTES.ATTRACTION_LIST}/${id}`);
 
-  const handleSubmit = () => {
-    console.log('name', name);
-    console.log('category', category);
-    console.log('subCategory', subCategory);
-    console.log('description', description);
-    console.log('images', images);
-  };
+  const handleSubmit = useCallback(async () => {
+    const data = {
+      name,
+      category,
+      subCategory,
+      description,
+      images,
+    };
+    try {
+      const updateResult: any = await attractionService.patch(id, data);
+      if (updateResult.status === 'success') {
+        setNotification({
+          type: 'info',
+          message: `${updateResult.data[0].name} successfully updated!`,
+        });
+        setTimeout(() => {
+          setNotification(null);
+        }, 4000);
+      }
+    } catch (err: any) {
+      console.log(err);
+      setNotification({ type: 'error', message: err.message });
+      setTimeout(() => {
+        setNotification(null);
+      }, 4000);
+    }
+  }, [id, name, category, subCategory, description, images, attractionService]);
 
   if (isloading)
     return (
@@ -57,6 +86,9 @@ const UpdateAttractionPage = () => {
 
   return (
     <div className="border border-2 rounded p-4 mb-5">
+      {notification && (
+        <Alert type={notification.type} message={notification.message} />
+      )}
       <div className="details">
         <Input
           variant="normal"
