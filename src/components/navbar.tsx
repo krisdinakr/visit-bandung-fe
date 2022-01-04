@@ -32,10 +32,15 @@ export const Navbar = () => (
               aria-expanded="false"
               data-bs-offset="30,10"
             >
-              Tourist Attractions
+              Things To Do
             </Link>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuOffset">
-              <span className="navbar__dropdown-text">Tourist Attractions</span>
+              <span className="navbar__dropdown-text">Things To Do</span>
+              <li>
+                <Link to={USER_ROUTES.ATTRACTIONS} className="dropdown-item">
+                  Attractions
+                </Link>
+              </li>
               <li>
                 <Link to={USER_ROUTES.CULTURE_ART} className="dropdown-item">
                   Culture &amp; Art
@@ -57,11 +62,8 @@ export const Navbar = () => (
                 </Link>
               </li>
               <li>
-                <Link
-                  to={USER_ROUTES.HISTORY_HERITAGE}
-                  className="dropdown-item"
-                >
-                  History &amp; Heritage
+                <Link to={USER_ROUTES.HISTORY} className="dropdown-item">
+                  History
                 </Link>
               </li>
             </ul>

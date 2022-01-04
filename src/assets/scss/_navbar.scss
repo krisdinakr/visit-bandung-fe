@@ -2,7 +2,7 @@
   background-color: $white;
 
   .dropdown-menu {
-    height: 45vh;
+    height: 23rem;
     max-width: 100vw;
     width: 100%;
     padding-top: 1rem;
@@ -61,6 +61,7 @@
       padding: 1rem;
     }
     @include media-breakpoint-up(xl) {
+      margin-left: 1rem;
       &:hover,
       &:active,
       &:focus {
