@@ -1,4 +1,10 @@
-import { shopping, culinary, nature, culture } from 'assets/images';
+import {
+  shopping,
+  culinary,
+  nature,
+  culture,
+  attractions,
+} from 'assets/images';
 import { USER_ROUTES } from 'routes';
 
 export const mustVisit = [
@@ -34,6 +40,11 @@ export const mustVisit = [
 
 export const interestSection = [
   {
+    name: 'Attractions',
+    images: attractions,
+    slug: USER_ROUTES.ATTRACTIONS,
+  },
+  {
     name: 'Culture & Art',
     images: culture,
     slug: USER_ROUTES.CULTURE_ART,
@@ -57,6 +68,6 @@ export const interestSection = [
     name: 'History & Heritage',
     images:
       'https://cdn1.katadata.co.id/media/images/thumb/2020/04/03/2020_04_03-14_03_08_912bf38709d1751bfe7c23ba5c14cc40_620x413_thumb.jpg',
-    slug: USER_ROUTES.HISTORY_HERITAGE,
+    slug: USER_ROUTES.HISTORY,
   },
 ];
