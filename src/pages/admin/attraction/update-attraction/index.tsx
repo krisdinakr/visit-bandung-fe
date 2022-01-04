@@ -40,8 +40,7 @@ const UpdateAttractionPage = () => {
     fetchAttraction();
   }, [fetchAttraction]);
 
-  const handleCancel = () =>
-    history.push(`${ADMIN_ROUTES.PLACE_LIST}/${id}`);
+  const handleCancel = () => history.push(`${ADMIN_ROUTES.PLACE_LIST}/${id}`);
 
   const handleSubmit = useCallback(async () => {
     const data = {
