@@ -3,15 +3,24 @@ import { FC, ReactNode } from 'react';
 interface ModalProps {
   id: string;
   children: ReactNode;
-  title: string;
+  buttonLabel: string;
+  handleButton: () => void;
 }
 
-export const Modal: FC<ModalProps> = ({ id, children, title }) => (
+export const Modal: FC<ModalProps> = ({
+  id,
+  children,
+  buttonLabel,
+  handleButton,
+}) => (
   <div className="modal fade" id={id} tabIndex={-1}>
     <div className="modal-dialog">
       <div className="modal-content">
         <div className="modal-header">
-          <h5 className="modal-title">{title}</h5>
+          <h5 className="modal-title">
+            <i className="far fa-check-circle me-2"></i>
+            Are you sure?
+          </h5>
           <button
             type="button"
             className="btn-close"
@@ -23,13 +32,18 @@ export const Modal: FC<ModalProps> = ({ id, children, title }) => (
         <div className="modal-footer">
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn btn-info"
             data-bs-dismiss="modal"
           >
-            Close
+            Cancel
           </button>
-          <button type="button" className="btn btn-primary">
-            Save changes
+          <button
+            type="button"
+            data-bs-dismiss="modal"
+            className="btn btn-danger text-capitalize"
+            onClick={handleButton}
+          >
+            {buttonLabel}
           </button>
         </div>
       </div>
