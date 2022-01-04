@@ -7,13 +7,13 @@ import {
   UpdateAttractionPage,
 } from './admin';
 
-import { HomePage, AttractionsPage } from './user';
+import { HomePage, CategoryPage } from './user';
 
 export {
   DashboardPage,
   LoginAdminPage,
   HomePage,
-  AttractionsPage,
+  CategoryPage,
   AttractionListPage,
   AttractionDetailsPage,
   CreateAttractionPage,

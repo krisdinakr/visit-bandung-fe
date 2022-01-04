@@ -3,12 +3,12 @@ import hero from 'assets/images/hero.jpg';
 import { mustVisit } from 'data';
 import { useLocation } from 'react-router';
 
-const AttractionsPage = () => {
+const CategoryPage = () => {
   const location = useLocation();
   console.log(location, 'here');
 
   return (
-    <div className="attractions-page">
+    <div className="category-page">
       <Navbar />
       <Hero img={hero} alt="Monumen Perjuangan Bandung" />
       <div className="container pb-5 pt-4">
@@ -22,7 +22,7 @@ const AttractionsPage = () => {
           <li className="me-3">Souvenir</li>
         </ul>
 
-        <section className="attractions-page__wrapper">
+        <section className="category-page__wrapper">
           <div className="row py-3 ">
             {mustVisit.map((data) => (
               <div className="col-md-4" key={data.id}>
@@ -37,4 +37,4 @@ const AttractionsPage = () => {
   );
 };
 
-export default AttractionsPage;
+export default CategoryPage;

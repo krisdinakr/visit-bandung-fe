@@ -2,7 +2,7 @@ import { Template } from 'components';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   HomePage,
-  AttractionsPage,
+  CategoryPage,
   LoginAdminPage,
   DashboardPage,
   AttractionListPage,
@@ -47,7 +47,7 @@ const App = () => (
         <LoginAdminPage />
       </Route>
       <Route>
-        <AttractionsPage />
+        <CategoryPage />
       </Route>
     </Switch>
   </Router>

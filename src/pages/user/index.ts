@@ -1,4 +1,4 @@
 import HomePage from './home-page';
-import AttractionsPage from './attractions';
+import CategoryPage from './category-page';
 
-export { HomePage, AttractionsPage };
+export { HomePage, CategoryPage };
